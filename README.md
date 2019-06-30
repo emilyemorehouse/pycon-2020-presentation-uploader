@@ -1,13 +1,9 @@
-<div align="center">
-  <!-- Build Status -->
-  <a href="https://travis-ci.org/cuttlesoft/react-boilerplate">
-    <img src="https://travis-ci.org/cuttlesoft/react-boilerplate.svg" alt="Build Status" />
-  </a>
-  <!-- Test Coverage -->
-  <a href="https://coveralls.io/r/cuttlesoft/react-boilerplate">
-    <img src="https://coveralls.io/repos/github/cuttlesoft/react-boilerplate/badge.svg" alt="Test Coverage" />
-  </a>
-</div>
+# Cuttlesoft's React Boilerplate
+
+[![CircleCI](https://circleci.com/gh/cuttlesoft/react-boilerplate.com.svg?style=svg&circle-token=e3419672a138ad3d3daef4d0e3a3a2321bc40f73)](https://circleci.com/gh/cuttlesoft/react-boilerplate.com)
+
+[![Airbnb Style
+Guide](https://badgen.net/badge/code%20style/Airbnb/ff5a5f?icon=airbnb)](https://github.com/airbnb/javascript)
 
 ## Features
 
