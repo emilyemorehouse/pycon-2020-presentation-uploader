@@ -44,7 +44,8 @@
     "coveralls": "cat ./coverage/lcov.info | coveralls",
     "prettify": "prettier --write",
     "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "build-storybook": "build-storybook",
+    "generate-readme": "cross-env NODE_ENV=development babel-node --presets @babel/preset-env ./internals/scripts/generate-readme.js"
   },
   "browserslist": [
     "last 2 versions",
@@ -98,6 +99,7 @@
   "devDependencies": {
     "@babel/cli": "7.4.3",
     "@babel/core": "7.4.3",
+    "@babel/node": "^7.4.5",
     "@babel/plugin-proposal-class-properties": "7.4.0",
     "@babel/plugin-syntax-dynamic-import": "7.2.0",
     "@babel/plugin-transform-modules-commonjs": "7.4.3",

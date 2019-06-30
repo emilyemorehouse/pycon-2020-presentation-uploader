@@ -81,9 +81,14 @@ npm run build
 ```
 
 Preps your app for deployment (does not run tests). Optimizes and minifies all files, piping them to the `build` folder.
+### Generating Component Documentation
 
-Upload the contents of `build` to your web server to
-see your work live!
+Components should be documented in a `<Component>.doc.js` file. To generate the
+corresponding markdown documentation:
+
+```Shell
+npm run generate-readme
+```
 
 ## Testing
 
