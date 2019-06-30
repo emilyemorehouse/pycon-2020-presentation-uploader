@@ -111,6 +111,12 @@ the tests run by Jest. Useful if you need to run a specific test only.
 npm test -- Button
 ```
 
+### Updating snapshots
+
+```Shell
+npm run test:update
+```
+
 ### Watching
 
 ```Shell
