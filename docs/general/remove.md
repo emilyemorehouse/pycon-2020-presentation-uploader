@@ -15,15 +15,17 @@ Delete `webpack-pwa-manifest` from the the list of plugins in
 
 ### Removing performant web font loading
 
-**Careful** about removing this, as perceived performance might be highly impacted.
+**Careful** about removing this, as perceived performance might be highly
+impacted.
 
-To remove `FontFaceObserver`, don't import it in [`app.js`](../../app/app.js) and
-remove it from the [`package.json`](../../package.json).
+To remove `FontFaceObserver`, don't import it in [`app.js`](../../app/app.js)
+and remove it from the [`package.json`](../../package.json).
 
 ### Removing image optimization
 
 To remove image optimization, delete the `image-webpack-loader` from the
-[`package.json`](../../package.json), and remove the `image-loader` from [`webpack.base.babel.js`](../../internals/webpack/webpack.base.babel.js):
+[`package.json`](../../package.json), and remove the `image-loader` from
+[`webpack.base.babel.js`](../../internals/webpack/webpack.base.babel.js):
 
 ```
 …

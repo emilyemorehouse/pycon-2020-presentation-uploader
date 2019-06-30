@@ -7,12 +7,12 @@ Since all the files kept in the same folder, this should be a breeze.
 ## When?
 
 Often when working on a project, you find you've created a component that you
-could use in other upcoming projects. You would like to extract that
-component to its own git repository and npm package since keeping the version
-histories separate makes a lot of sense.
+could use in other upcoming projects. You would like to extract that component
+to its own git repository and npm package since keeping the version histories
+separate makes a lot of sense.
 
-You're not finished with the component, but would like to continue working on it
-in parallel alongside your main project.
+You're not finished with the component, but would like to continue working on
+it in parallel alongside your main project.
 
 ## How?
 
@@ -23,8 +23,9 @@ package, and including it in your main project.
 ### Npm
 
 Npm has a great feature that allows this kind of parallel development of
-packages - `npm link` (read more [here](https://docs.npmjs.com/cli/link)). After
-setting up your new package, you can link it into your main package like this:
+packages - `npm link` (read more [here](https://docs.npmjs.com/cli/link)).
+After setting up your new package, you can link it into your main package like
+this:
 
 1.  `cd` into your new package directory
 2.  Run `npm link`
@@ -35,8 +36,8 @@ setting up your new package, you can link it into your main package like this:
 
 #### Specifying dependencies
 
-Linking the packages won't save the package as a dependency in your main project
-`package.json`, so you'll have to do that manually.
+Linking the packages won't save the package as a dependency in your main
+project `package.json`, so you'll have to do that manually.
 
 ```json
 "dependencies": {
@@ -72,13 +73,12 @@ This will make sure that your main project always includes your most recent
 code. You've just got to remember to change it back to `lib/` before publishing
 to the npm registry.
 
-You can, of course, go down the `lib/` path, but that requires you to
-rebuild your package and transpile it to ES5 whenever you introduce a change,
-which can be a pain.
+You can, of course, go down the `lib/` path, but that requires you to rebuild
+your package and transpile it to ES5 whenever you introduce a change, which can
+be a pain.
 
 ### Building
 
 Building the package can be a little bit tricky due to how webpack handles
 symlinks. We've found it easiest to remove the symlink and replace it with the
-actual files, either by copying the package to `node_modules` or running
-`npm install` if you've published your package to the npm registry.
+actual files, either by copying the package to `node_modules` or running `npm install` if you've published your package to the npm registry.

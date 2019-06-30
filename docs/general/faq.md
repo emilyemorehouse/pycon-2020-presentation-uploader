@@ -1,25 +1,32 @@
 # Frequently Asked Questions
 
-- [Where are Babel, Prettier and ESLint configured?](#where-are-babel-prettier-and-eslint-configured)
+- [Where are Babel, Prettier and ESLint
+  configured?](#where-are-babel-prettier-and-eslint-configured)
 - [Where are the files coming from when I run `npm start`?](#where-are-the-files-coming-from-when-i-run-npm-start)
 - [How do I fix `Error: listen EADDRINUSE 127.0.0.1:3000`?](#how-do-i-fix-error-listen-eaddrinuse-1270013000)
   - [OS X / Linux:](#os-x--linux)
   - [Windows](#windows)
-- [Issue with local caching when running in production mode (F5 / ctrl+F5 / cmd+r weird behavior)](#issue-with-local-caching-when-running-in-production-mode-f5--ctrlf5--cmdr-weird-behavior)
-    - [Quick fix on your local browser:](#quick-fix-on-your-local-browser)
-    - [Full in-depth explanation](#full-in-depth-explanation)
-- [Local webfonts not working for development](#local-webfonts-not-working-for-development)
+- [Issue with local caching when running in production mode (F5 / ctrl+F5 /
+  cmd+r weird
+  behavior)](#issue-with-local-caching-when-running-in-production-mode-f5--ctrlf5--cmdr-weird-behavior)
+  - [Quick fix on your local browser:](#quick-fix-on-your-local-browser)
+  - [Full in-depth explanation](#full-in-depth-explanation)
+- [Local webfonts not working for
+  development](#local-webfonts-not-working-for-development)
 - [Non-route containers](#non-route-containers)
   - [Where do I put the reducer?](#where-do-i-put-the-reducer)
 - [Use CI with bitbucket pipelines](#use-ci-with-bitbucket-pipelines)
-- [How to keep my project up-to-date with `react-boilerplate`?](#how-to-keep-my-project-up-to-date-with-react-boilerplate)
-- [How to turn off Webpack performance warnings after production build?](#how-to-turn-off-webpack-performance-warnings-after-production-build)
+- [How to keep my project up-to-date with
+  `react-boilerplate`?](#how-to-keep-my-project-up-to-date-with-react-boilerplate)
+- [How to turn off Webpack performance warnings after production
+  build?](#how-to-turn-off-webpack-performance-warnings-after-production-build)
 - [Styles getting overridden?](#styles-getting-overridden)
 - [Have another question?](#have-another-question)
 
 ## Where are Babel, Prettier and ESLint configured?
 
-ESLint, Babel and Prettier all have their own config files in the root of the project. Same for Jest and stylelint.
+ESLint, Babel and Prettier all have their own config files in the root of the
+project. Same for Jest and stylelint.
 
 ## Where are the files coming from when I run `npm start`?
 
@@ -52,8 +59,8 @@ The fix is to kill the process and rerun `npm start`.
     ```Shell
     kill -9 YOUR_PID
     ```
-    > e.g. given the output from the example above, `YOUR_PID` is `29811`, hence
-    > that would mean you would run `kill -9 29811`
+    > e.g. given the output from the example above, `YOUR_PID` is `29811`,
+    > hence that would mean you would run `kill -9 29811`
 
 ### Windows
 
@@ -81,16 +88,18 @@ The fix is to kill the process and rerun `npm start`.
     ```Shell
     taskkill /F /PID YOUR_PID
     ```
-    > e.g. given the output from the example above, `YOUR_PID` is `28344`, hence
-    > that would mean you would run `taskkill /F /PID 28344`
+    > e.g. given the output from the example above, `YOUR_PID` is `28344`,
+    > hence that would mean you would run `taskkill /F /PID 28344`
 
 ## Issue with local caching when running in production mode (F5 / ctrl+F5 / cmd+r weird behavior)
 
-Your production site isn't working? You update the code and nothing changes? It drives you insane?
+Your production site isn't working? You update the code and nothing changes? It
+drives you insane?
 
 #### Quick fix on your local browser:
 
-To fix it on your local browser, just do the following. (Suited when you're testing the production mode locally)
+To fix it on your local browser, just do the following. (Suited when you're
+testing the production mode locally)
 
 `Chrome dev tools > Application > Clear Storage > Clear site data` _(Chrome)_
 
@@ -117,14 +126,16 @@ output: {
 
 ## Non-route containers
 
-> Note: Container will always be nested somewhere below a route. Even if there's dozens of components
-> in between, somewhere up the tree will be route. (maybe only "/", but still a route)
+> Note: Container will always be nested somewhere below a route. Even if
+> there's dozens of components in between, somewhere up the tree will be route.
+> (maybe only "/", but still a route)
 
 ### Where do I put the reducer?
 
-While you can include the reducer statically in `reducers.js`, we don't recommend this as you lose
-the benefits of code splitting. Instead, add it as a _composed reducer_. This means that you
-pass actions onward to a second reducer from a lower-level route reducer like so:
+While you can include the reducer statically in `reducers.js`, we don't
+recommend this as you lose the benefits of code splitting. Instead, add it as a
+_composed reducer_. This means that you pass actions onward to a second reducer
+from a lower-level route reducer like so:
 
 ```JS
 // Main route reducer
@@ -137,14 +148,19 @@ function myReducerOfRoute(state, action) {
 }
 ```
 
-That way, you still get the code splitting at route level, but avoid having a static `combineReducers`
-call that includes all of them by default.
+That way, you still get the code splitting at route level, but avoid having a
+static `combineReducers` call that includes all of them by default.
 
-_See [this and the following lesson](https://egghead.io/lessons/javascript-redux-reducer-composition-with-arrays?course=getting-started-with-redux) of the egghead.io Redux course for more information about reducer composition!_
+_See [this and the following
+lesson](https://egghead.io/lessons/javascript-redux-reducer-composition-with-arrays?course=getting-started-with-redux)
+of the egghead.io Redux course for more information about reducer composition!_
 
 ## Use CI with bitbucket pipelines
 
-Your project is on bitbucket? Take advantage of the pipelines feature (Continuous Integration) by creating a 'bitbucket-pipelines.yml' file at the root of the project and use the following code to automatically test your app at each commit:
+Your project is on bitbucket? Take advantage of the pipelines feature
+(Continuous Integration) by creating a 'bitbucket-pipelines.yml' file at the
+root of the project and use the following code to automatically test your app
+at each commit:
 
 ```YAML
 image: gwhansscheuren/bitbucket-pipelines-node-chrome-firefox
@@ -161,32 +177,39 @@ pipelines:
 
 ## How to keep my project up-to-date with `react-boilerplate`?
 
-While it's possible to keep your project up-to-date or "in sync" with `react-boilerplate`, it's usually
-very difficult and is therefore **_at your own risk_** and not recommended. You should not need to do it either, as
-every version you use will be amazing! There is a long term goal to make this much easier but no ETA at the moment.
+While it's possible to keep your project up-to-date or "in sync" with
+`react-boilerplate`, it's usually very difficult and is therefore **_at your
+own risk_** and not recommended. You should not need to do it either, as every
+version you use will be amazing! There is a long term goal to make this much
+easier but no ETA at the moment.
 
 ## How to turn off Webpack performance warnings after production build?
 
-Webpack recommends having those performance hints turned off in development but to keep them on in production. If you still want to disable them, add the next lines to the config in `webpack.prod.babel.js`:
+Webpack recommends having those performance hints turned off in development but
+to keep them on in production. If you still want to disable them, add the next
+lines to the config in `webpack.prod.babel.js`:
 
 ```js
 performance: {
-  hints: false;
+  hints: false
 }
 ```
 
-You can find more information about the `performance` option (how to change maximum allowed size of a generated file, how to exclude some files from being checked and so on) in the [Webpack documentation](https://webpack.js.org/configuration/performance/).
+You can find more information about the `performance` option (how to change
+maximum allowed size of a generated file, how to exclude some files from being
+checked and so on) in the [Webpack
+documentation](https://webpack.js.org/configuration/performance/).
 
 ## Styles getting overridden?
 
-There is a strong chance that your styles are getting imported in the wrong order. Confused?
-Let me try and explain with an example!
+There is a strong chance that your styles are getting imported in the wrong
+order. Confused? Let me try and explain with an example!
 
 ```javascript
 // MyStyledComponent.js
 const MyStyledComponent = styled.div`
   background-color: green;
-`;
+`
 ```
 
 ```css
@@ -198,24 +221,28 @@ const MyStyledComponent = styled.div`
 
 ```javascript
 // ContrivedExample.js
-import MyStyledComponent from './MyStyledComponent';
-import './styles.css';
+import MyStyledComponent from './MyStyledComponent'
+import './styles.css'
 
 const ContrivedExample = props => (
   <MyStyledComponent className="alert">{props.children}</MyStyledComponent>
-);
+)
 ```
 
-With the magic of [webpack](https://webpack.js.org/), both `MyStyledComponent.js` and `styles.css`
-will each generate a stylesheet that will be injected at the end of `<head>` and applied to `<MyStyledComponent>`
-via the [`class` attribute](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes#attr-class).
+With the magic of [webpack](https://webpack.js.org/), both
+`MyStyledComponent.js` and `styles.css` will each generate a stylesheet that
+will be injected at the end of `<head>` and applied to `<MyStyledComponent>`
+via the [`class`
+attribute](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes#attr-class).
 
 So, will `<ContrivedExample>` have a green background or a red background?
 
-Applying the rules of [specificity](https://developer.mozilla.org/en/docs/Web/CSS/Specificity), you
-may think red as `styles.css` was imported last. Unfortunately, at the time of writing
-an open issue ["CSS resolving order"](https://github.com/webpack/webpack/issues/215)
-means you cannot control the order in which the stylesheets are injected. So, with this contrived
+Applying the rules of
+[specificity](https://developer.mozilla.org/en/docs/Web/CSS/Specificity), you
+may think red as `styles.css` was imported last. Unfortunately, at the time of
+writing an open issue ["CSS resolving
+order"](https://github.com/webpack/webpack/issues/215) means you cannot control
+the order in which the stylesheets are injected. So, with this contrived
 example, the background could be either green or red.
 
 To resolve the issue, you can either:
@@ -235,7 +262,7 @@ const MyStyledComponent = styled.div`
   && {
     background-color: green;
   }
-`;
+`
 ```
 
 **2) Import the CSS in the `<head>` of your `index.html` manually**
@@ -244,17 +271,19 @@ This is a good choice if you are having issues with third-party styles
 
 ```javascript
 // Import bootstrap style (e.g. move this into the <head> of index.html)
-import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap/dist/css/bootstrap.min.css'
 ```
 
 **3) Change the position of `<GlobalStyle>` in the rendering of `<App>`**
 
 You can do that inside `containers/App/index.js`.
 
-More information is available in the [official documentation](https://github.com/styled-components/styled-components/blob/master/docs/existing-css.md).
+More information is available in the [official
+documentation](https://github.com/styled-components/styled-components/blob/master/docs/existing-css.md).
 
 ## Have another question?
 
-Submit an [issue](https://github.com/react-boilerplate/react-boilerplate/issues),
-hop onto the [Spectrum chat](https://spectrum.chat/react-boilerplate)
-or contact Max direct on [twitter](https://twitter.com/mxstbr)!
+Submit an
+[issue](https://github.com/react-boilerplate/react-boilerplate/issues), hop
+onto the [Spectrum chat](https://spectrum.chat/react-boilerplate) or contact
+Max direct on [twitter](https://twitter.com/mxstbr)!

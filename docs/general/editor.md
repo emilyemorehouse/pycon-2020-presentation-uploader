@@ -1,10 +1,15 @@
 # Setting Up Your Editor
 
-You can edit React Boilerplate using any editor or IDE, but there are a few extra steps that you can take to make sure your coding experience is as good as it can be.
+You can edit React Boilerplate using any editor or IDE, but there are a few
+extra steps that you can take to make sure your coding experience is as good as
+it can be.
 
 ## VS Code
 
-To get the best editing experience with [VS Code](https://code.visualstudio.com), create a [`jsconfig.json`](https://code.visualstudio.com/Docs/languages/javascript#_javascript-projects-jsconfigjson) file at the root of your project:
+To get the best editing experience with [VS
+Code](https://code.visualstudio.com), create a
+[`jsconfig.json`](https://code.visualstudio.com/Docs/languages/javascript#_javascript-projects-jsconfigjson)
+file at the root of your project:
 
 ```json
 {
@@ -18,16 +23,23 @@ To get the best editing experience with [VS Code](https://code.visualstudio.com)
 }
 ```
 
-This `jsconfig.json` file tells VS Code to treat all JS files as part of the same project, improving IntelliSense, code navigation, and refactoring. You can configure project wide settings in using the `jsconfig.json`, such as only allowing functions from the ES5 standard library, or even enable [more advanced type checking for JS files](https://code.visualstudio.com/docs/languages/javascript#_type-checking)
+This `jsconfig.json` file tells VS Code to treat all JS files as part of the
+same project, improving IntelliSense, code navigation, and refactoring. You can
+configure project wide settings in using the `jsconfig.json`, such as only
+allowing functions from the ES5 standard library, or even enable [more advanced
+type checking for JS
+files](https://code.visualstudio.com/docs/languages/javascript#_type-checking)
 
 # ESLint + Prettier integration
 
-You can also get VSCode to understand your project's static code analysis setup. If you do this:
+You can also get VSCode to understand your project's static code analysis
+setup. If you do this:
 
 - You'll see any warnings or errors directly within VSCode
 - VSCode can also automatically fix or format your code for you
 
-To make this happen, install both the ESLint and Prettier extensions for VSCode and add the following to either your User or Workspace Settings:
+To make this happen, install both the ESLint and Prettier extensions for VSCode
+and add the following to either your User or Workspace Settings:
 
 ```json
 {
@@ -37,4 +49,5 @@ To make this happen, install both the ESLint and Prettier extensions for VSCode 
 }
 ```
 
-Here's also a detailed video on the topic: [How to Setup VS Code + Prettier + ESLint](https://www.youtube.com/watch?v=YIvjKId9m2c)
+Here's also a detailed video on the topic: [How to Setup VS Code + Prettier +
+ESLint](https://www.youtube.com/watch?v=YIvjKId9m2c)

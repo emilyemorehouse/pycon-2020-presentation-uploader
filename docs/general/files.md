@@ -5,16 +5,19 @@ they do.
 
 ## The root folder
 
-- `.editorconfig`: Sets the default configuration for certain files across editors. (e.g. indentation)
+- `.editorconfig`: Sets the default configuration for certain files across
+  editors. (e.g. indentation)
 
-- `.gitattributes`: Normalizes how `git`, the version control system this boilerplate uses, handles certain files.
+- `.gitattributes`: Normalizes how `git`, the version control system this
+  boilerplate uses, handles certain files.
 
-- `.gitignore`: Tells `git` to ignore certain files and folders which don't need to be version controlled, like the build folder.
+- `.gitignore`: Tells `git` to ignore certain files and folders which don't
+  need to be version controlled, like the build folder.
 
 - `.travis.yml` and `appveyor.yml`: Continuous Integration configuration<br/>
-  This boilerplate uses [Travis CI](https://travis-ci.com) for Linux environments
-  and [AppVeyor](https://www.appveyor.com/) for Windows platforms, but feel free
-  to swap either out for your own choice of CI.
+  This boilerplate uses [Travis CI](https://travis-ci.com) for Linux
+  environments and [AppVeyor](https://www.appveyor.com/) for Windows platforms,
+  but feel free to swap either out for your own choice of CI.
 
 - `package.json`: Our `npm` configuration file has three functions:
 
@@ -30,5 +33,6 @@ they do.
 This is where the bulk of the tooling configuration lives, broken out into
 recognisable units of work.
 
-Feel free to change anything you like but don't be afraid to [ask upfront](https://spectrum.chat/react-boilerplate)
-whether you should: build systems are easy to break!
+Feel free to change anything you like but don't be afraid to [ask
+upfront](https://spectrum.chat/react-boilerplate) whether you should: build
+systems are easy to break!
