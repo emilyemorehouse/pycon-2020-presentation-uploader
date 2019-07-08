@@ -33,18 +33,18 @@ module.exports = plop => {
     }
   });
   plop.addHelper('curly', (object, open) => (open ? '{' : '}'));
-  plop.setActionType('prettify', (answers, config) => {
+  plop.setActionType('format', (answers, config) => {
     const folderPath = `${path.join(
       __dirname,
       '/../../app/',
       config.path,
       plop.getHelper('properCase')(answers.name),
       '**',
-      '**.js',
+      '*.js',
     )}`;
 
     try {
-      execSync(`npm run prettify -- "${folderPath}"`);
+      execSync(`npm run format -- "${folderPath}"`);
       return folderPath;
     } catch (err) {
       throw err;
