@@ -3,10 +3,10 @@ import { ignore } from 'mobx-sync'
 import { createContext } from 'react'
 import { getRepos } from '../services/github.service'
 
-export class GitHub {
+export class GitHubStore {
   @ignore @observable repos = []
 
-  @ignore @observable currentUser = ''
+  @observable currentUser = ''
 
   @ignore @observable isLoading = false
 
@@ -28,5 +28,5 @@ export class GitHub {
   }
 }
 
-export const github = new GitHub()
+export const github = new GitHubStore()
 export const GitHubStoreContext = createContext(github)
