@@ -1,11 +1,3 @@
-/**
- *
- * App
- *
- * This component is the skeleton around the actual pages, and should only
- * contain code that should be seen on all pages. (e.g. navigation bar)
- */
-
 import React from 'react'
 import { Helmet } from 'react-helmet'
 import styled from 'styled-components'
@@ -14,9 +6,12 @@ import { Switch, Route } from 'react-router-dom'
 import HomePage from 'containers/HomePage/HomePage.loadable'
 import FeaturePage from 'containers/FeaturePage/FeaturePage.loadable'
 import NotFoundPage from 'containers/NotFoundPage/NotFoundPage.loadable'
+
+// Components
 import { TemplateHeader } from 'components/TemplateHeader'
 import { Footer } from 'components/Footer'
 
+// Styles
 import GlobalStyle from '../../global-styles'
 
 const AppWrapper = styled.div`
@@ -27,7 +22,13 @@ const AppWrapper = styled.div`
   padding: 0 16px;
   flex-direction: column;
 `
-
+/**
+ *
+ * App
+ *
+ * This component is the skeleton around the actual pages, and should only
+ * contain code that should be seen on all pages. (e.g. navigation bar)
+ */
 export default function App() {
   return (
     <AppWrapper>
