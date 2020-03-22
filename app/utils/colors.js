@@ -1,6 +1,5 @@
 const colors = {
-  turbo: 'rgb(242,233,0)', // Turbo
-  buttercup: 'rgb(245,186,23)', // Buttercup
+  yellow: 'rgb(225, 189, 71);',
   crimson: 'rgb(230,34,45)', // Crimson
   magenta: 'rgb(221,17,117)', // Magenta
   modBlue: 'rgb(65,86,166)', // Mod Blue
@@ -11,6 +10,7 @@ const colors = {
 }
 
 colors.primary = colors.modBlue
+colors.secondary = colors.yellow
 colors.primaryText = colors.darkGrey
 colors.background = colors.lightGrey
 

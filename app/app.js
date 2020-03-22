@@ -31,11 +31,16 @@ import 'file-loader?name=.htaccess!./.htaccess' // eslint-disable-line import/ex
 
 // Observe loading of Open Sans (to remove open sans, remove the <link> tag in
 // the index.html file and this observer)
-const openSansObserver = new FontFaceObserver('Open Sans', {})
+const headingObserver = new FontFaceObserver('Roboto Mono', {})
+const bodyObserver = new FontFaceObserver('Poppins', {})
 
-// When Open Sans is loaded, add a font-family using Open Sans to the body
-openSansObserver.load().then(() => {
-  document.body.classList.add('fontLoaded')
+// When heading font is loaded, add font-family to the body
+headingObserver.load().then(() => {
+  document.body.classList.add('headerFont-loaded')
+})
+// When body font is loaded, add font-family to the body
+bodyObserver.load().then(() => {
+  document.body.classList.add('font-loaded')
 })
 
 const MOUNT_NODE = document.getElementById('app')
