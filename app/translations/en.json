@@ -1,10 +1,6 @@
 {
   "app.containers.Register.header": "This is the Register container!",
   "app.containers.Register.loading": "Loading Register container!",
-  "boilerplate.components.Footer.author.message": "\n      Made with love by {author}.\n    ",
-  "boilerplate.components.Footer.license.message": "This project is licensed under the MIT license.",
-  "boilerplate.components.Header.features": "Features",
-  "boilerplate.components.Header.home": "Home",
   "boilerplate.containers.FeaturePage.css.header": "Features",
   "boilerplate.containers.FeaturePage.css.message": "Next generation CSS",
   "boilerplate.containers.FeaturePage.feedback.header": "Instant feedback",
