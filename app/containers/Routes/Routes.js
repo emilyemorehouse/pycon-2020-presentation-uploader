@@ -6,6 +6,7 @@ import { Switch, Route } from 'react-router-dom'
 import styled from 'styled-components'
 
 // Containers
+import { Dashboard } from 'containers/Dashboard'
 import { FeaturePage } from 'containers/FeaturePage'
 import { HomePage } from 'containers/HomePage'
 import { Login } from 'containers/Login'
@@ -44,6 +45,7 @@ export default function Routes() {
           <Route exact path="/" component={HomePage} />
           <Route exact path="/login" component={Login} />
           <Route exact path="/register" component={Register} />
+          <Route exact path="/dashboard" component={Dashboard} />
           <Route path="/features" component={FeaturePage} />
           <Route path="" component={NotFoundPage} />
         </Switch>
