@@ -213,8 +213,8 @@ exports[`Grommet custom theme 1`] = `
 }
 
 .c0 {
-  font-family: MankSans;
-  font-size: 18px;
+  font-family: Roboto Mono;
+  font-size: 16px;
   line-height: 24px;
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
