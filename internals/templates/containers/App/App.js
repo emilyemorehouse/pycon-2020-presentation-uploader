@@ -6,7 +6,6 @@ import styled from 'styled-components'
 // Components
 import { HomePage } from 'containers/HomePage'
 import { NotFoundPage } from 'containers/NotFoundPage'
-import { Footer } from 'components/Footer'
 
 // Styles
 import GlobalStyle from '../../global-styles'
@@ -38,7 +37,6 @@ export default function App() {
         <Route path="" component={NotFoundPage} />
       </Switch>
 
-      <Footer />
       <GlobalStyle />
     </AppWrapper>
   )
