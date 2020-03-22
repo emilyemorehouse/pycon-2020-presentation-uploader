@@ -15,7 +15,7 @@ exports[`HomePage should render and match the snapshot 1`] = `
       </span>
     </h2>
     <span
-      class="StyledText-sc-1sadyjn-0 hUokoe Text__StyledText-sc-1qclgcc-0 ifZuor"
+      class="StyledText-sc-1sadyjn-0 hUokoe Text__StyledGrommetText-sc-1qclgcc-0 lkunaY"
     >
       <span>
         The link between music venues, touring artists, and crew.

@@ -25,7 +25,7 @@ exports[`Dashboard renders and matches snapshot 1`] = `
           class="StyledBox-sc-13pk1d4-0 hZATeQ"
         >
           <span
-            class="StyledText-sc-1sadyjn-0 hUokoe Text__StyledText-sc-1qclgcc-0 ifZuor"
+            class="StyledText-sc-1sadyjn-0 hUokoe Text__StyledGrommetText-sc-1qclgcc-0 lkunaY"
           >
             Sort
           </span>
@@ -55,7 +55,7 @@ exports[`Dashboard renders and matches snapshot 1`] = `
           class="StyledBox-sc-13pk1d4-0 hZATeQ"
         >
           <span
-            class="StyledText-sc-1sadyjn-0 hUokoe Text__StyledText-sc-1qclgcc-0 ifZuor"
+            class="StyledText-sc-1sadyjn-0 hUokoe Text__StyledGrommetText-sc-1qclgcc-0 lkunaY"
           >
             Sort
           </span>
@@ -85,7 +85,7 @@ exports[`Dashboard renders and matches snapshot 1`] = `
           class="StyledBox-sc-13pk1d4-0 hZATeQ"
         >
           <span
-            class="StyledText-sc-1sadyjn-0 hUokoe Text__StyledText-sc-1qclgcc-0 ifZuor"
+            class="StyledText-sc-1sadyjn-0 hUokoe Text__StyledGrommetText-sc-1qclgcc-0 lkunaY"
           >
             Sort
           </span>

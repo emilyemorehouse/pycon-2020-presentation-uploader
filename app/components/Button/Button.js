@@ -16,7 +16,7 @@ const StyledGrommetButton = styled(GrommetButton)`
 
 /**
  *
- * Button.js
+ * Button
  *
  */
 const Button = ({ ...rest }) => <StyledGrommetButton {...rest} />

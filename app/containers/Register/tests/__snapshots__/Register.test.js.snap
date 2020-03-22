@@ -250,7 +250,7 @@ exports[`Register renders and matches snapshot 1`] = `
                     class="StyledBox-sc-13pk1d4-0 iOGeQY"
                   >
                     <span
-                      class="StyledText-sc-1sadyjn-0 gmtNWw Text__StyledText-sc-1qclgcc-0 ifZuor"
+                      class="StyledText-sc-1sadyjn-0 gmtNWw Text__StyledGrommetText-sc-1qclgcc-0 lkunaY"
                     >
                       Artist
                     </span>
@@ -278,7 +278,7 @@ exports[`Register renders and matches snapshot 1`] = `
                     class="StyledBox-sc-13pk1d4-0 iOGeQY"
                   >
                     <span
-                      class="StyledText-sc-1sadyjn-0 gmtNWw Text__StyledText-sc-1qclgcc-0 ifZuor"
+                      class="StyledText-sc-1sadyjn-0 gmtNWw Text__StyledGrommetText-sc-1qclgcc-0 lkunaY"
                     >
                       Venue
                     </span>
@@ -306,7 +306,7 @@ exports[`Register renders and matches snapshot 1`] = `
                     class="StyledBox-sc-13pk1d4-0 iOGeQY"
                   >
                     <span
-                      class="StyledText-sc-1sadyjn-0 gmtNWw Text__StyledText-sc-1qclgcc-0 ifZuor"
+                      class="StyledText-sc-1sadyjn-0 gmtNWw Text__StyledGrommetText-sc-1qclgcc-0 lkunaY"
                     >
                       Crew
                     </span>
@@ -339,13 +339,13 @@ exports[`Register renders and matches snapshot 1`] = `
             </div>
           </div>
           <span
-            class="StyledText-sc-1sadyjn-0 jtSDez Text__StyledText-sc-1qclgcc-0 ifZuor"
+            class="StyledText-sc-1sadyjn-0 jtSDez Text__StyledGrommetText-sc-1qclgcc-0 lkunaY"
           >
             I agree with the
           </span>
         </label>
         <span
-          class="StyledText-sc-1sadyjn-0 eYKUIT Text__StyledText-sc-1qclgcc-0 ifZuor"
+          class="StyledText-sc-1sadyjn-0 eYKUIT Text__StyledGrommetText-sc-1qclgcc-0 lkunaY"
         >
            Terms of Service, Privacy Policy and Cookie Policy
         </span>
