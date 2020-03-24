@@ -5,13 +5,16 @@ exports[`Dashboard renders and matches snapshot 1`] = `
   <div
     class="StyledGrommet-sc-19lkkz7-0 blnwXx"
   >
+    <div
+      class="StyledBox-sc-13pk1d4-0 hnYbnp"
+    />
     <h2
       class="StyledHeading-sc-1rdh4aw-0 jMKEAN"
     >
       Dashboard
     </h2>
     <div
-      class="StyledGrid-sc-1wofa1l-0 dXwRwF"
+      class="StyledGrid-sc-1wofa1l-0 gkQQbB"
     >
       <div
         class="StyledBox-sc-13pk1d4-0 bquWcN"
