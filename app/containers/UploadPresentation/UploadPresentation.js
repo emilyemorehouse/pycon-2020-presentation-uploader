@@ -2,11 +2,11 @@
 import React, { useState } from 'react'
 import Airtable from 'airtable'
 import Dropbox from 'dropbox'
-import { MaskedInput, Meter, RadioButtonGroup, Select } from 'grommet'
-
+import { MaskedInput, Meter, RadioButtonGroup, Select, TextArea } from 'grommet'
 import { isEmail } from 'validator'
 
 // Components
+import { Anchor } from 'components/Anchor'
 import { Box } from 'components/Box'
 import { Button } from 'components/Button'
 import { Form, FormField } from 'components/Form'
@@ -26,6 +26,7 @@ import {
   TITLES_BY_CATEGORY,
   UPLOAD_FILE_SIZE_LIMIT,
 } from './UploadPresentation.constants'
+import header from '../../assets/images/header.png'
 
 const AIRTABLE_BASE = new Airtable({ apiKey: AIRTABLE_API_KEY }).base(AIRTABLE_BASE_ID)
 const DROPBOX_CLIENT = new Dropbox.Dropbox({ accessToken: DROPBOX_TOKEN })
@@ -53,15 +54,21 @@ const UploadPresentation = () => {
   const [email, setEmail] = useState(undefined)
   const [givenName, setGivenName] = useState(undefined)
   const [familyName, setFamilyName] = useState(undefined)
+  const [unlistedPresentationTitle, setUnlistedPresentationTitle] = useState(undefined)
   const [presentationDate, setPresentationDate] = useState(undefined)
   const [presentationTime, setPresentationTime] = useState(undefined)
   const [presentation, setPresentation] = useState(undefined)
-  const [video, setVideo] = useState(undefined)
+  const [videoFile, setVideoFile] = useState(undefined)
+  const [notes, setNotes] = useState(undefined)
 
-  const getPath = () =>
-    `/${presentationType}s/${givenName}${familyName}_${
+  const getPath = () => {
+    const splitFile = document.getElementById('video_file').files[0].name.split('.')
+    const fileExtension = splitFile[splitFile.length - 1]
+
+    return `/${presentationType}s/${givenName}${familyName}_${
       DATES[presentationDate]
-    }_${presentationTime.replace(' ', '')}`
+    }_${presentationTime.replace(' ', '')}.${fileExtension}`
+  }
 
   const finishSubmission = airtableId => {
     // Reset form
@@ -72,10 +79,12 @@ const UploadPresentation = () => {
     setEmail(undefined)
     setGivenName(undefined)
     setFamilyName(undefined)
+    setUnlistedPresentationTitle(undefined)
     setPresentationDate(undefined)
     setPresentationTime(undefined)
     setPresentation(undefined)
-    setVideo(undefined)
+    setVideoFile(undefined)
+    setNotes(undefined)
 
     // Reset select options
     setOptions([])
@@ -101,11 +110,11 @@ const UploadPresentation = () => {
   }
 
   const uploadPresentation = airtableId => {
-    if (video.size < UPLOAD_FILE_SIZE_LIMIT) {
+    if (videoFile.size < UPLOAD_FILE_SIZE_LIMIT) {
       // File is smaller than 150 Mb - use filesUpload API
       return DROPBOX_CLIENT.filesUpload({
         path: getPath(),
-        contents: video,
+        contents: videoFile,
       })
         .then(() => {
           setTotal(100)
@@ -123,9 +132,9 @@ const UploadPresentation = () => {
     let offset = 0
 
     // Generate chunks
-    while (offset < video.size) {
-      const chunkSize = Math.min(MAX_BLOB, video.size - offset)
-      workItems.push(video.slice(offset, offset + chunkSize))
+    while (offset < videoFile.size) {
+      const chunkSize = Math.min(MAX_BLOB, videoFile.size - offset)
+      workItems.push(videoFile.slice(offset, offset + chunkSize))
       offset += chunkSize
     }
     setTotal(workItems.length)
@@ -157,7 +166,7 @@ const UploadPresentation = () => {
 
       // Last chunk of data, close session
       return acc.then(sessionId => {
-        const cursor = { session_id: sessionId, offset: video.size - blob.size }
+        const cursor = { session_id: sessionId, offset: videoFile.size - blob.size }
         const commit = {
           path: getPath(),
           mode: 'add',
@@ -179,8 +188,17 @@ const UploadPresentation = () => {
 
   return (
     <>
+      <Box
+        background={{ image: `url(${header})`, size: 'contain' }}
+        style={{ height: '20vh', width: '100vw', marginTop: 30 }}
+      />
+
       <Box align="center" pad="large" data-testid="uploadPresentation-header">
-        <Heading level="2">Submit Presentation</Heading>
+        <Heading level="2">Submit Your Presentation Video</Heading>
+        <Text size="small">
+          If you have any issues uploading, please contact{' '}
+          <Anchor href="mailto:emily@python.org">emily@python.org</Anchor>
+        </Text>
       </Box>
 
       <Form
@@ -198,11 +216,13 @@ const UploadPresentation = () => {
                   'Given Name': givenName,
                   'Family Name': familyName,
                   'Presentation Date': presentationDate,
-                  'Presentation Name': presentation.name,
+                  'Presentation Name': presentation ? presentation.name : '',
+                  'Unlisted Presentation Name': unlistedPresentationTitle,
+                  Notes: notes,
                   'Presentation Time': presentationTime,
                   'Email Address': email,
-                  'Dropbox File Name': `${givenName}${familyName}_${DATES[presentationDate]}_${presentationTime}`, // DeanWampler_17_140
-                  'Schedule Link': presentation.conf_url,
+                  'Dropbox File Name': getPath(),
+                  'Schedule Link': presentation ? presentation.conf_url : '',
                 },
               },
             ],
@@ -284,6 +304,11 @@ const UploadPresentation = () => {
           emptySearchMessage={`No matches found. ${
             !presentationType ? "Make sure you've selected a talk type." : ''
           }`}
+          help={
+            <Text color="brand" style={{ fontSize: '11px' }} weight="bold">
+              If your talk title is not listed, please use "Unlisted Presentation Title"
+            </Text>
+          }
           label="Presentation Title"
           labelKey="name"
           name="presentation_title"
@@ -302,10 +327,16 @@ const UploadPresentation = () => {
             setOptions(TITLES_BY_CATEGORY[presentationType].filter(o => exp.test(o.name)))
           }}
           placeholder="Select your talk title..."
-          required
           style={{ maxWidth: '70vw' }}
           value={presentation}
           valueKey={item => item}
+        />
+
+        <FormField
+          label="Unlisted Presentation Title"
+          name="unlisted_presentation_title"
+          value={unlistedPresentationTitle}
+          onChange={e => setUnlistedPresentationTitle(e.target.value)}
         />
 
         <FormField
@@ -349,19 +380,26 @@ const UploadPresentation = () => {
           value={presentationTime}
         />
 
-        {/* TODO: make required! */}
         <FormField
           label="Video File"
           name="video_file"
           onChange={() => {
             const file = document.getElementById('video_file').files[0]
-            setVideo(file)
+            setVideoFile(file)
           }}
           required
-          value={video}
+          value={videoFile}
         >
           <input type="file" id="video_file" name="video_file" accept="video/*" />
         </FormField>
+
+        <FormField
+          component={TextArea}
+          label="Notes"
+          name="notes"
+          onChange={e => setNotes(e.target.value)}
+          value={notes}
+        />
 
         <Box margin={{ vertical: 'large' }}>
           {/* Submit */}
