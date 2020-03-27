@@ -3,21 +3,21 @@ import { render } from '@testing-library/react'
 
 // Components
 import { TestWrapper } from 'utils/TestWrapper'
-import { Login } from '../index'
+import { UploadPresentation } from '../index'
 
 const renderComponent = (props = {}) =>
   render(
     <TestWrapper>
-      <Login {...props} />
+      <UploadPresentation {...props} />
     </TestWrapper>,
   )
 
 /**
  *
- * Tests for Login
+ * Tests for UploadPresentation
  *
  */
-describe('Login', () => {
+describe('UploadPresentation', () => {
   it('renders and matches snapshot', () => {
     const { container } = renderComponent()
     expect(container).toMatchSnapshot()
