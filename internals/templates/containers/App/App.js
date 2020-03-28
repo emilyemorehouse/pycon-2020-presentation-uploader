@@ -28,8 +28,11 @@ const AppWrapper = styled.div`
 export default function App() {
   return (
     <AppWrapper>
-      <Helmet titleTemplate="%s - React.js Boilerplate" defaultTitle="React.js Boilerplate">
-        <meta name="description" content="A React.js Boilerplate application" />
+      <Helmet
+        titleTemplate="%s - PyCon Presentation Upload"
+        defaultTitle="PyCon Presentation Upload"
+      >
+        <meta name="description" content="A PyCon Presentation Upload application" />
       </Helmet>
 
       <Switch>

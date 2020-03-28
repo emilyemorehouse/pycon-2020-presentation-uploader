@@ -3,13 +3,13 @@
 exports[`<App /> should render and match the snapshot 1`] = `
 <App__AppWrapper>
   <HelmetWrapper
-    defaultTitle="React.js Boilerplate"
+    defaultTitle="PyCon Presentation Upload"
     defer={true}
     encodeSpecialCharacters={true}
-    titleTemplate="%s - React.js Boilerplate"
+    titleTemplate="%s - PyCon Presentation Upload"
   >
     <meta
-      content="A React.js Boilerplate application"
+      content="A PyCon Presentation Upload application"
       name="description"
     />
   </HelmetWrapper>
