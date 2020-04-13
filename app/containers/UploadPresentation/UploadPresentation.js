@@ -302,7 +302,7 @@ const UploadPresentation = () => {
           component={Select}
           disabled={!options}
           emptySearchMessage={`No matches found. ${
-            !presentationType ? "Make sure you've selected a talk type." : ''
+            !presentationType ? "Make sure you've selected a presentation type." : ''
           }`}
           help={
             <Text color="brand" style={{ fontSize: '11px' }} weight="bold">
