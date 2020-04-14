@@ -395,6 +395,12 @@ const UploadPresentation = () => {
 
         <FormField
           component={TextArea}
+          help={
+            <Text color="brand" style={{ fontSize: '11px' }} weight="bold">
+              Please provide any links for slides or additional resources that you would like to be
+              included in your talk description
+            </Text>
+          }
           label="Notes"
           name="notes"
           onChange={e => setNotes(e.target.value)}
