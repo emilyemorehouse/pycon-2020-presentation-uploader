@@ -9,7 +9,7 @@ export const MAX_BLOB = 8 * 1000 * 1000 // 8Mb - Dropbox JavaScript API suggeste
 
 export const DATES = {
   'April 15th (Tutorials)': '15',
-  'April 16th (Tutorials)': '16',
+  'April 16th (Tutorials, Edu Summit)': '16',
   'April 17th (Talks)': '17',
   'April 18th (Talks)': '18',
   'April 19th (Talks)': '19',

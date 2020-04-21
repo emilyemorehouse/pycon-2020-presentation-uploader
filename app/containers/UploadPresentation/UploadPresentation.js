@@ -229,6 +229,7 @@ const UploadPresentation = () => {
             (err, results) => {
               if (err) {
                 showError('Could not process your submission. Please try again.')
+                setLoading(false)
               } else {
                 uploadPresentation(results[0].id)
               }
@@ -249,7 +250,7 @@ const UploadPresentation = () => {
               // Clear out selected talk since the available list has changed
               setPresentation('')
             }}
-            options={['Talk', 'Charla', 'Tutorial']}
+            options={['Talk', 'Charla', 'Tutorial', 'Education Summit']}
             value={presentationType}
           >
             {(option, { checked, hover }) => {
