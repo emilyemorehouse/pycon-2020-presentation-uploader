@@ -1,5 +1,5 @@
 /* @flow */
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import Airtable from 'airtable'
 import Dropbox from 'dropbox'
 import { MaskedInput, Meter, RadioButtonGroup, Select, TextArea } from 'grommet'
@@ -227,6 +227,8 @@ const UploadPresentation = () => {
               },
             ],
             (err, results) => {
+              window.scrollTo(0, document.body.scrollHeight)
+
               if (err) {
                 showError('Could not process your submission. Please try again.')
                 setLoading(false)
@@ -411,7 +413,12 @@ const UploadPresentation = () => {
         <Box margin={{ vertical: 'large' }}>
           {/* Submit */}
           <Box direction="row" margin={{ vertical: 'medium' }}>
-            <Button disabled={loading} label="Submit Presentation" primary type="submit" />
+            <Button
+              disabled={loading || success}
+              label="Submit Presentation"
+              primary
+              type="submit"
+            />
           </Box>
 
           {(loading || success) && (
