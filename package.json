@@ -83,7 +83,7 @@
     "compression": "1.7.4",
     "cross-env": "7.0.2",
     "dropbox": "^4.0.30",
-    "express": "4.17.1",
+    "express": "4.17.3",
     "fontfaceobserver": "2.1.0",
     "grommet": "^2.11.2",
     "history": "4.10.1",
